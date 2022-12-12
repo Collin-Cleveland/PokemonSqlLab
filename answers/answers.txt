@@ -988,3 +988,16 @@
 | Swirlix    |        1 |
 | Spewpa     |        1 |
 +------------+----------+
+
+////////////////////////////////////////////////////Part 4
+
+1. SELECT p.name 'Pokemon', tr.trainername 'Trainer', pt.pokelevel 'Level', 1t.name 'Primary', 2t.name 'Secondary'
+    FROM pokemon_trainer pt
+    JOIN pokemons p ON pt.pokemon_id = p.id
+    JOIN trainers tr ON pt.trainerID = tr.trainerID
+    JOIN types 1t ON 1t.id = p.primary_type
+    JOIN types 2t ON 2t.id = p.secondary_type
+    ORDER BY pt.hp DESC, pt.pokelevel DESC, pt.attack DESC;
+
+    //decided that health(hp) is the most important in a battle followed by pokemon level
+        which attributes to the strength and skill then by attack strength.
